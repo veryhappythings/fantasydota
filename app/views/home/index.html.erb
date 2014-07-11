@@ -1,7 +1,10 @@
 <h2>epic.FANTASY</h2>
 
-<%= link_to "Edit your profile", edit_user_registration(:user) %>
-<%= link_to "Sign in", new_session_path(:user) %><br />
-<%= link_to "Sign up", new_registration_path(:user) %><br />
-<%= link_to "Forgot your password?", new_password_path(:user) %><br />
-
+<% if user_signed_in? %>
+  <%= link_to "Edit your profile", edit_user_registration_path %><br />
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br />
+<% else %>
+  <%= link_to "Sign in", new_session_path(:user) %><br />
+  <%= link_to "Sign up", new_registration_path(:user) %><br />
+  <%= link_to "Forgot your password?", new_password_path(:user) %><br />
+<% end %>
