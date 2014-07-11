@@ -20,6 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :last_sign_in_ip
 
       t.string :epiclan_id
+      t.boolean :is_admin, default: false
 
       ## Confirmable
       # t.string   :confirmation_token
