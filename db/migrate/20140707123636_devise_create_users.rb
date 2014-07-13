@@ -22,6 +22,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :epiclan_id
       t.boolean :is_admin, default: false
 
+      t.integer :player1_id
+      t.integer :player2_id
+      t.integer :player3_id
+      t.integer :player4_id
+      t.integer :player5_id
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

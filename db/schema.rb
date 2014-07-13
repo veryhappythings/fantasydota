@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(version: 20140713190108) do
     t.string   "last_sign_in_ip"
     t.string   "epiclan_id"
     t.boolean  "is_admin",               default: false
+    t.integer  "player1_id"
+    t.integer  "player2_id"
+    t.integer  "player3_id"
+    t.integer  "player4_id"
+    t.integer  "player5_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
