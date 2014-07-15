@@ -1,5 +1,20 @@
 <h2>epic.FANTASY</h2>
 
+<div>
+  <h3>Current scores</h3>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>Score</td>
+    </tr>
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.epiclan_id %></td>
+      <td><%= user.score %></td>
+    </tr>
+  <% end %>
+  </table>
+
 <% if user_signed_in? %>
   <%= link_to "Edit your profile", edit_user_registration_path %><br />
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br />

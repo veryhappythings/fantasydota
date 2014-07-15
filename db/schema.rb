@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713190108) do
+ActiveRecord::Schema.define(version: 20140715180230) do
+
+  create_table "games", force: true do |t|
+    t.string   "name"
+    t.integer  "team1_id"
+    t.integer  "team2_id"
+    t.integer  "winner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "player_results", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "game_id"
+    t.integer  "hero"
+    t.integer  "level"
+    t.integer  "kills"
+    t.integer  "deaths"
+    t.integer  "assists"
+    t.integer  "gold"
+    t.integer  "last_hits"
+    t.integer  "denies"
+    t.integer  "xpm"
+    t.integer  "gpm"
+    t.integer  "hero_damage"
+    t.integer  "hero_healing"
+    t.integer  "tower_damage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "players", force: true do |t|
     t.integer  "team_id"
