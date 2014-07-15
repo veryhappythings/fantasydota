@@ -8,5 +8,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :epiclan_id
+    devise_parameter_sanitizer.for(:sign_up) << :player1_id
+    devise_parameter_sanitizer.for(:sign_up) << :player2_id
+    devise_parameter_sanitizer.for(:sign_up) << :player3_id
+    devise_parameter_sanitizer.for(:sign_up) << :player4_id
+    devise_parameter_sanitizer.for(:sign_up) << :player5_id
   end
 end
