@@ -11,7 +11,7 @@
         <th>Support 2</th>
         <th>Score</th>
       </tr>
-    <% User.all.sort_by({|user| user.score}).reverse_each do |user| %>
+    <% User.all.sort_by {|user| user.score}.reverse_each do |user| %>
       <tr>
         <td><%= user.epiclan_id %></td>
         <td><%= user.player1 && user.player1.name %></td>
