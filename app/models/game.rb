@@ -10,7 +10,12 @@ class Game < ActiveRecord::Base
 
   def score(player)
     if players.include? player
-      player_results.find_by(player: player).score
+      result = player_results.find_by(player: player)
+      if result
+        result.score
+      else
+        0
+      end
     else
       0
     end
