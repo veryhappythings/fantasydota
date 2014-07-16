@@ -4,4 +4,8 @@ class Player < ActiveRecord::Base
 
   scope :cores, -> {where(core: true)}
   scope :supports, -> {where(core: false)}
+
+  def name
+    "#{team.abbreviation}.#{handle}"
+  end
 end
