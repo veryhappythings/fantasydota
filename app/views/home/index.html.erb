@@ -1,19 +1,30 @@
-<h2>epic.FANTASY</h2>
-
-<div>
-  <h3>Current scores</h3>
-  <table>
-    <tr>
-      <td>Name</td>
-      <td>Score</td>
-    </tr>
-  <% User.all.each do |user| %>
-    <tr>
-      <td><%= user.epiclan_id %></td>
-      <td><%= user.score %></td>
-    </tr>
-  <% end %>
-  </table>
+<div class="panel">
+  <div class="panel-body">
+    <h2>Current scores</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Core 1</th>
+        <th>Core 2</th>
+        <th>Core 3</th>
+        <th>Support 1</th>
+        <th>Support 2</th>
+        <th>Score</th>
+      </tr>
+    <% User.all.each do |user| %>
+      <tr>
+        <td><%= user.epiclan_id %></td>
+        <td><%= user.player1 && user.player1.name %></td>
+        <td><%= user.player2 && user.player2.name %></td>
+        <td><%= user.player3 && user.player3.name %></td>
+        <td><%= user.player4 && user.player4.name %></td>
+        <td><%= user.player5 && user.player5.name %></td>
+        <td><%= user.score %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
 
 <% if user_signed_in? %>
   <%= link_to "Edit your profile", edit_user_registration_path %><br />
