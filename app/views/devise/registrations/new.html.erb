@@ -16,25 +16,27 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <% players = Player.all %>
+  <% cores = Player.cores.all %>
+  <% supports = Player.supports.all %>
   <div>
-    <label for='user_player1_id'>Player 1</label>
-    <%= select_tag 'user[player1_id]', options_from_collection_for_select(players, :id, :name) %>
+    <label for='user_player1_id'>Core 1</label>
+    <%= select_tag 'user[player1_id]', options_from_collection_for_select(cores, :id, :name) %>
   </div>
   <div>
-    <label for='user_player2'>Player 2</label>
-    <%= select_tag 'user[player2_id]', options_from_collection_for_select(players, :id, :name) %>
+    <label for='user_player2'>Core 2</label>
+    <%= select_tag 'user[player2_id]', options_from_collection_for_select(cores, :id, :name) %>
   </div>
   <div>
-    <label for='user_player3'>Player 3</label>
-    <%= select_tag 'user[player3_id]', options_from_collection_for_select(players, :id, :name) %>
+    <label for='user_player3'>Core 3</label>
+    <%= select_tag 'user[player3_id]', options_from_collection_for_select(cores, :id, :name) %>
   </div>
   <div>
-    <label for='user_player4'>Player 4</label>
-    <%= select_tag 'user[player4_id]', options_from_collection_for_select(players, :id, :name) %>
+    <label for='user_player4'>Support 4</label>
+    <%= select_tag 'user[player4_id]', options_from_collection_for_select(supports, :id, :name) %>
   </div>
   <div>
-    <label for='user_player5'>Player 5</label>
-    <%= select_tag 'user[player5_id]', options_from_collection_for_select(players, :id, :name) %>
+    <label for='user_player5'>Support 5</label>
+    <%= select_tag 'user[player5_id]', options_from_collection_for_select(supports, :id, :name) %>
   </div>
 
   <div><%= f.submit "Sign up" %></div>

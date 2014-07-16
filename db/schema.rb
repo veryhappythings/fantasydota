@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140715180230) do
     t.integer  "team_id"
     t.string   "name"
     t.string   "handle"
+    t.boolean  "core"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

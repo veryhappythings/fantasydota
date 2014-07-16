@@ -4,6 +4,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.belongs_to :team
       t.string :name
       t.string :handle
+      t.boolean :core
 
       t.timestamps
     end
